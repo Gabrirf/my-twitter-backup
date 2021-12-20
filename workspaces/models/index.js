@@ -1,8 +1,7 @@
 const mongoose = require('mongoose');
 
-const Model = require('./src/Model');
+const Model = require('./src/model');
 
-mongoose.set('useCreateIndex', true);
 const { connect } = mongoose;
 
 module.exports = {
