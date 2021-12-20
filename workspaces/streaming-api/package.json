@@ -1,0 +1,22 @@
+{
+  "name": "streaming-api",
+  "version": "0.0.0",
+  "author": "Gabriel Rodríguez Flores <gabrirf.dev@gmail.com>",
+  "description": "Module to store all streaming data from twitter",
+  "homepage": "https://github.com/Gabrirf/my-twitter-backup/tree/main/workspaces/streaming-api#readme",
+  "license": "MIT",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "nodemon",
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "dependencies": {
+    "helpers": "^0.0.0",
+    "models": "^0.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.4"
+  }
+}

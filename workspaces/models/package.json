@@ -1,0 +1,11 @@
+{
+  "name": "models",
+  "version": "0.0.0",
+  "author": "Gabriel Rodríguez Flores <gabrirf.dev@gmail.com>",
+  "description": "Models definitions for twitter resources",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "mongoose": "^6.1.2"
+  }
+}
