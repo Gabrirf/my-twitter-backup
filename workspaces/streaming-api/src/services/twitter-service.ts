@@ -6,6 +6,7 @@ async function setStreamRules(client){
   const tweetFields = {
     'tweet.fields': ['referenced_tweets', 'author_id', 'created_at', 'public_metrics'],
     'user.fields': ['name', 'username'],
+    expansions: ['author_id']
   };
 
   await client.v2.updateStreamRules({
