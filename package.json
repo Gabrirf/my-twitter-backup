@@ -13,6 +13,10 @@
     "postinstall": "lerna bootstrap",
     "start": "lerna run start --parallel",
     "lint": "eslint . --ext .js,.ts",
+    "compose:tools": "docker-compose -f docker/docker-compose.tools.yml up -d",
+    "compose:tools:down": "docker-compose -f docker/docker-compose.tools.yml down",
+    "compose:test": "docker-compose -f docker/docker-compose.test.yml up -d",
+    "compose:test:down": "docker-compose -f docker/docker-compose.test.yml down",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {},
