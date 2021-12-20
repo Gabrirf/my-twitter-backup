@@ -1,6 +1,8 @@
 import { logger } from "helpers"
 import { TwitterApi, ETwitterStreamEvent } from 'twitter-api-v2';
 
+import { createTweet }  from './mongodb-services';
+
 async function setStreamRules(client){
 
   const tweetFields = {
@@ -25,6 +27,7 @@ function subscribeToStream(stream){
       return;
     }
     logger.info(JSON.stringify(tweet, null, 2));
+    createTweet(tweet);
   });
 
 }

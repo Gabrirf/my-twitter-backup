@@ -8,10 +8,10 @@ const tweetSchema = new Schema({
   username: String,
   text: String,
   createdAt: Date,
-  retweet: Number,
-  like: Number,
+  retweets: Number,
+  likes: Number,
 });
 
 tweetSchema.method('toJSON', cleanObject);
 
-module.exports = model('user', tweetSchema);
+module.exports = model('tweets', tweetSchema);
