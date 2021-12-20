@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const Model = require('./src/model');
+const Model = require('./src/tweet');
 
 const { connect } = mongoose;
 
