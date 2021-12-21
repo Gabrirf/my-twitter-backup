@@ -34,9 +34,11 @@
 
 ## Improvements and alternatives
 
+- Configure Linter
+- Configure VSCode Debug
 - Allow 'asc' or 'desc' to sort
 - Return total elements and total pages in pagination
-- 
+- Allow unsubscribe from Stream
 
 ## References
 
