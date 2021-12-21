@@ -1,5 +1,9 @@
-function hello(){
-  return 'Hello world!';
+import { logger } from 'helpers';
+
+function hello(args) {
+  logger.info(args.name);
+  const name = args.name || 'world';
+  return `Hello ${name}!`;
 }
 
 function bye(){
