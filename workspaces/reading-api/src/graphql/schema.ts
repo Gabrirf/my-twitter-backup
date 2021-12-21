@@ -13,7 +13,7 @@ const schema = buildSchema(`
   }
 
   type Query {
-    tweets(contains: String): [Tweet]
+    tweets(contains: String, username: String, offset: Int, limit: Int, sort: String): [Tweet]
   }
 `);
 

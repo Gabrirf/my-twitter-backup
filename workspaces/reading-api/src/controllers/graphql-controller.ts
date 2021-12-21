@@ -4,11 +4,20 @@ import { getTweetList } from '../services/mongodb-service'
 
 async function tweets(args){
 
-  const { contains, offset = 0, limit = 2, sort = 'createdAt' } = args;
+  const {
+    sort = 'createdAt',
+    offset = 0,
+    limit = 10,
+    contains,
+    username,
+  } = args;
 
   const filters = {
     text: { $regex: new RegExp(contains || '.*', 'i') },
+    username,
   };
+
+  Object.keys(filters).forEach(key => filters[key] === undefined && delete filters[key]);
 
   const tweetList = await getTweetList(filters, offset, limit, sort);
   return tweetList;
