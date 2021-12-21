@@ -37,3 +37,8 @@
 
 - [Monorepo: Lerna+Typescript](https://github.com/abd1tus/typescript-monorepo-example)
 - [Twitter API](https://developer.twitter.com/en/docs/twitter-api/getting-started/getting-access-to-the-twitter-api)
+    - [Filtered Stream](https://developer.twitter.com/en/docs/twitter-api/tweets/filtered-stream/api-reference/get-tweets-search-stream)
+- [NPM twitter-api-v2](https://github.com/PLhery/node-twitter-api-v2/tree/fa7b499db5314c1dd1254682d59e58f3f4b8e082)
+    - [Streaming](https://github.com/plhery/node-twitter-api-v2/blob/HEAD/doc/streaming.md)
+    - [Examples](https://github.com/plhery/node-twitter-api-v2/blob/HEAD/doc/examples.md)
+    
