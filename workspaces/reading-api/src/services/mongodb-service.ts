@@ -18,8 +18,8 @@ function createTweet(tweet){
   new Tweet(dataToStore).save();
 }
 
-function getTweetList(filters){
-  return Tweet.find(filters);
+function getTweetList(filters, offset, limit, sort){
+  return Tweet.find(filters).skip(offset).limit(limit).sort({ [sort]: -1 });
 }
 
 export { createTweet, getTweetList };
