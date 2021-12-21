@@ -18,4 +18,8 @@ function createTweet(tweet){
   new Tweet(dataToStore).save();
 }
 
-export { createTweet };
+function getTweetList(filters){
+  return Tweet.find(filters);
+}
+
+export { createTweet, getTweetList };
