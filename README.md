@@ -30,6 +30,7 @@
 - Setup typescript debug on VSCode
 - Integrate Twitter API v1 (only premium access, require elevate)
 - Typescript types and syntax
+- Twitter API 429: too many request
 
 ## Improvements and alternatives
 
