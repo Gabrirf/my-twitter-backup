@@ -33,6 +33,10 @@
 
 ## Improvements and alternatives
 
+- Allow 'asc' or 'desc' to sort
+- Return total elements and total pages in pagination
+- 
+
 ## References
 
 - [Monorepo: Lerna+Typescript](https://github.com/abd1tus/typescript-monorepo-example)

@@ -1,6 +1,10 @@
 import * as dotenv from 'dotenv';
 dotenv.config();
 
+const app = {
+  port: process.env.PORT,
+}
+
 const twitter = {
   token: process.env.BEARER_TOKEN,
 }
@@ -24,6 +28,7 @@ const mongodb = {
 };
 
 const config = {
+  app,
   twitter,
   mongodb,
 }
