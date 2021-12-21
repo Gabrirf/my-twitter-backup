@@ -17,6 +17,7 @@
     "compose:tools:down": "docker-compose -f docker/docker-compose.tools.yml down",
     "compose:test": "docker-compose -f docker/docker-compose.test.yml up -d",
     "compose:test:down": "docker-compose -f docker/docker-compose.test.yml down",
+    "copy:env": "for d in workspaces/*; do cp ${d}/.env.template ${d}/.env; done",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {},

@@ -1,20 +1,124 @@
 # my-twitter-backup
 
+## Instalation
+
+1. Download or clone this repo
+
+```bash
+git clone https://github.com/Gabrirf/my-twitter-backup.git
+```
+
+2. Install npm dependencies
+
+```bash
+npm i
+```
+
+3. Copy & configure env file
+
+```bash
+npm run copy:file
+```
+
+> You must insert your Twitter API Bearer token `BREAER_TOKEN` variable on streaming api module.
+
+4. Deploy local services with docker-compose
+
+```bash
+npm run compose:tools
+```
+
+5. Launch app from root repository folder
+
+```bash
+npm start
+```
+
 ## Architecture
 
 ![Technical architecture](doc/images/streaming-twitter.drawio.png)
 
 ## Code structure
 
-// TODO folder tree
+```
+📦my-twitter-backup
+ ┣ 📂.vscode
+ ┣ 📂doc
+ ┣ 📂docker
+ ┣ 📂workspaces
+ ┃ ┣ 📂helpers
+ ┃ ┣ 📂models
+ ┃ ┣ 📂reading-api
+ ┃ ┗ 📂streaming-api
+ ┣ 📜.eslintignore
+ ┣ 📜.eslintrc.js
+ ┣ 📜.gitignore
+ ┣ 📜LICENSE
+ ┣ 📜README.md
+ ┣ 📜lerna.json
+ ┣ 📜package-lock.json
+ ┣ 📜package.json
+ ┗ 📜tsconfig.json
+```
 
 ### Stream API
 
-// TODO folder tree
-
+```
+📦streaming-api
+ ┣ 📂src
+ ┃ ┣ 📂controllers
+ ┃ ┃ ┣ 📜graphql-controller.ts
+ ┃ ┃ ┗ 📜index.ts
+ ┃ ┣ 📂graphql
+ ┃ ┃ ┣ 📜index.ts
+ ┃ ┃ ┗ 📜schema.ts
+ ┃ ┣ 📂loaders
+ ┃ ┃ ┣ 📜express-loader.ts
+ ┃ ┃ ┣ 📜index.ts
+ ┃ ┃ ┣ 📜mongodb-loader.ts
+ ┃ ┃ ┗ 📜twitter-loader.ts
+ ┃ ┣ 📂services
+ ┃ ┃ ┣ 📜index.ts
+ ┃ ┃ ┣ 📜mongodb-service.ts
+ ┃ ┃ ┗ 📜twitter-service.ts
+ ┃ ┣ 📜app.ts
+ ┃ ┣ 📜config.ts
+ ┃ ┗ 📜index.ts
+ ┣ 📂test
+ ┣ 📜.env
+ ┣ 📜.env.template
+ ┣ 📜README.md
+ ┣ 📜package-lock.json
+ ┗ 📜package.json
+```
 ### Reading API
 
-// TODO folder tree
+```
+📦reading-api
+ ┣ 📂src
+ ┃ ┣ 📂controllers
+ ┃ ┃ ┣ 📜graphql-controller.ts
+ ┃ ┃ ┗ 📜index.ts
+ ┃ ┣ 📂graphql
+ ┃ ┃ ┣ 📜index.ts
+ ┃ ┃ ┗ 📜schema.ts
+ ┃ ┣ 📂loaders
+ ┃ ┃ ┣ 📜express-loader.ts
+ ┃ ┃ ┣ 📜index.ts
+ ┃ ┃ ┗ 📜mongodb-loader.ts
+ ┃ ┣ 📂services
+ ┃ ┃ ┣ 📜index.ts
+ ┃ ┃ ┗ 📜mongodb-service.ts
+ ┃ ┣ 📜app.ts
+ ┃ ┣ 📜config.ts
+ ┃ ┗ 📜index.ts
+ ┣ 📂test
+ ┣ 📜.env
+ ┣ 📜.env.template
+ ┣ 📜README.md
+ ┣ 📜package-lock.json
+ ┗ 📜package.json
+```
 
 ## Main challenges
 
@@ -39,6 +143,7 @@
 - Allow 'asc' or 'desc' to sort
 - Return total elements and total pages in pagination
 - Allow unsubscribe from Stream
+- TODO Unit test
 
 ## References
 
