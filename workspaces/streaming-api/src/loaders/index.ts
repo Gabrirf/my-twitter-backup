@@ -4,7 +4,7 @@ import mongodbLoader from "./mongodb-loader";
 
 function init(app, config){
   expressLoader(app);
-  // twitterLoader(config.twitter);
+  twitterLoader(config.twitter);
   mongodbLoader(config.mongodb);
 }
 

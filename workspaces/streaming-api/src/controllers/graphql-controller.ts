@@ -2,9 +2,9 @@ import { logger } from 'helpers';
 
 import { twitterService }  from '../services';
 
-async function subscribeToTweet(args){
-  logger.debug(JSON.stringify(args));
-  return args.rule;
+function subscribeToTweet(args){
+  twitterService.subscribeToStream([args.rule]);
+  return `Subscribed to ${args.rule}`;
 }
 
 export default { 

@@ -3,22 +3,28 @@ import { TwitterApi, ETwitterStreamEvent } from 'twitter-api-v2';
 
 import { createTweet }  from './mongodb-service';
 
-async function setStreamRules(client){
+//let client;
+let token;
+async function init(config) {
+  token = config.token;
+  //client = new TwitterApi(config.token);
+}
 
-  const tweetFields = {
+async function subscribeToStream(rules){
+  const client = new TwitterApi(token);
+
+  const tweetFields: any = {
     'tweet.fields': ['referenced_tweets', 'author_id', 'created_at', 'public_metrics'],
     'user.fields': ['name', 'username'],
     expansions: ['author_id']
   };
 
   await client.v2.updateStreamRules({
-    add: [{ value: 'JavaScript' }, { value: 'NodeJS' }],
+    add: rules.map(rule => ({ value: rule })),
   });
 
-  return client.v2.searchStream(tweetFields);
-}
+  const stream = await client.v2.searchStream(tweetFields);
 
-function subscribeToStream(stream){
   stream.autoReconnect = true;
 
   stream.on(ETwitterStreamEvent.Data, async tweet => {
@@ -29,15 +35,9 @@ function subscribeToStream(stream){
     logger.info(JSON.stringify(tweet, null, 2));
     createTweet(tweet);
   });
-
-}
-
-async function init(config) {
-  const client = new TwitterApi(config.token);
-  const stream = await setStreamRules(client);
-  subscribeToStream(stream);
 }
 
 export default {
   init,
+  subscribeToStream,
 };
