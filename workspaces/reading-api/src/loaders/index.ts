@@ -1,6 +1,8 @@
+import expressLoader from "./express-loader";
 import mongodbLoader from "./mongodb-loader";
 
-function init(config){
+function init(app, config){
+  expressLoader(app);
   mongodbLoader(config.mongodb);
 }
 

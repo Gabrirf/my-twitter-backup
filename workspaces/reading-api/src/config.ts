@@ -1,6 +1,10 @@
 import * as dotenv from 'dotenv';
 dotenv.config();
 
+const app = {
+  port: process.env.PORT,
+}
+
 const db = {
   host: process.env.DATABASE_HOST,
   name: process.env.DATABASE_NAME,
@@ -20,6 +24,7 @@ const mongodb = {
 };
 
 const config = {
+  app,
   mongodb,
 }
 
