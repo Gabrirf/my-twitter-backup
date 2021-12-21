@@ -1,15 +1,5 @@
 import { logger } from 'helpers';
 
-function hello(args) {
-  logger.info(args.name);
-  const name = args.name || 'world';
-  return `Hello ${name}!`;
-}
-
-function bye(){
-  return 'Bye bye my world!';
-}
-
 function tweets(args){
   logger.info(Object.entries(args));
   const tweetList = [{
@@ -25,7 +15,5 @@ function tweets(args){
 }
 
 export default { 
-  hello,
-  bye,
   tweets,
 };
