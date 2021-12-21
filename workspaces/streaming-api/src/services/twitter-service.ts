@@ -1,7 +1,7 @@
 import { logger } from "helpers"
 import { TwitterApi, ETwitterStreamEvent } from 'twitter-api-v2';
 
-import { createTweet }  from './mongodb-services';
+import { createTweet }  from './mongodb-service';
 
 async function setStreamRules(client){
 
